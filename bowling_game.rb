@@ -14,16 +14,17 @@ class BowlingGame
   def start
     @frames = []
     game_roll = GameRoll.new
+    pins_down_collection_iterator(game_roll)
+    @frames
+  end
 
+  def pins_down_collection_iterator(game_roll)
     @pins_down_collection.each do |pins_down|
       game_roll.add(pins_down)
       frame = Frame.new
 
       if @frames.count == 10
-        if @frames.last.strike? || @frames.last.spare?
-          frame.add(pins_down)
-          @frames << frame
-        end
+        strike_or_spare(frame, pins_down)
       elsif game_roll.strike? && @frames.count <= 9
         frame.add(pins_down)
         @frames << frame
@@ -35,8 +36,13 @@ class BowlingGame
         game_roll.reset
       end
     end
+  end
 
-    @frames
+  def strike_or_spare(frame, pins_down)
+    if @frames.last.strike? || @frames.last.spare?
+      frame.add(pins_down)
+      @frames << frame
+    end
   end
 
   def score
