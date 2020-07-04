@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'minitest/autorun'
-require '../frame.rb'
+require_relative '../frame.rb'
 
 # frame logic class test
 class FrameTest < Minitest::Test

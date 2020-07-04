@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'minitest/autorun'
-load 'bowling_game.rb'
+require_relative '../bowling_game.rb'
 
 # bowling_game logic class
 class BowlingGameTest < Minitest::Test

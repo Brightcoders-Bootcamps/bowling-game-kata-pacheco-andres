@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-$LOAD_PATH.push('Users/andrespacheco/Documents/andres-pacheco/bowling-game-kata-pacheco-andres')
-
-load 'frame.rb'
-load 'game_roll.rb'
+require_relative 'frame.rb'
+require_relative 'game_roll.rb'
 
 # bowling game logic class
 class BowlingGame
@@ -73,8 +71,8 @@ class BowlingGame
   end
 end
 
-# game = BowlingGame.new
-# game.start.each do |frame|
-  # print frame.turns
-# end
-# puts "score #{game.score}"
+ game = BowlingGame.new
+ game.start.each do |frame|
+   print frame.turns
+ end
+ puts "score #{game.score}"

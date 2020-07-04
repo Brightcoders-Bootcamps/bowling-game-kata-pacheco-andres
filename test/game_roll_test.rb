@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'minitest/autorun'
-require '../game_roll.rb'
+require_relative '../game_roll.rb'
 
 # game roll logic class
 class GameRollTest < Minitest::Test
