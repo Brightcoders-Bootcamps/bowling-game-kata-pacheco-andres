@@ -4,19 +4,21 @@ require_relative 'base_frame.rb'
 
 # game roll logic class
 class GameRoll < BaseFrame
+  attr_accessor :turns
+
   def initialize
     @turns = []
   end
 
   def first_turn_pins_down
-    @turns.first
+    turns.first
   end
 
   def second_turn_pins_down
-    @turns.last
+    turns.last
   end
 
   def reset
-    @turns = []
+    self.turns = []
   end
 end
