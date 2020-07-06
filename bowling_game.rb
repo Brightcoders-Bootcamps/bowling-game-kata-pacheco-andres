@@ -27,7 +27,7 @@ class BowlingGame
         frame.add(pins_down)
         @frames << frame
         game_roll.reset
-      elsif game_roll.completed? && @frames.count <= 9
+      elsif game_roll.turns_completed? && @frames.count <= 9
         frame.add(game_roll.first_turn_pins_down)
         frame.add(game_roll.second_turn_pins_down)
         @frames << frame

@@ -23,7 +23,7 @@ class GameRollTest < Minitest::Test
     game_roll = GameRoll.new
     game_roll.add(1)
 
-    assert_equal game_roll.completed?, false
+    assert_equal game_roll.turns_completed?, false
   end
 
   def test_complited_true
@@ -31,7 +31,7 @@ class GameRollTest < Minitest::Test
     game_roll.add(1)
     game_roll.add(2)
 
-    assert_equal game_roll.completed?, true
+    assert_equal game_roll.turns_completed?, true
   end
 
   def test_add
